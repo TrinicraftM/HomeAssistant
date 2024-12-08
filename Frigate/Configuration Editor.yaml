@@ -1,0 +1,42 @@
+mqtt:
+  enabled: true
+  host: 192.168.1.42
+  user: root
+  password: trinidad
+  port: 1883
+
+cameras:
+  Logitech:
+    ffmpeg:
+      inputs:
+        - path: /dev/video0
+          input_args: -f v4l2 -pix_fmt yuyv422
+          roles:
+            - record
+        - path: /dev/video0
+          input_args: -f v4l2 -pix_fmt yuyv422
+          roles:
+            - detect
+    detect:
+      enabled: true
+      width: 640 # largeur de l'image du flux secondaire (en pixels)
+      height: 480 # hauteur de l'image du flux secondaire (en pixels)
+
+record:
+  enabled: true
+  retain:
+    days: 7
+  events:
+    retain:
+      default: 14
+snapshots:
+  enabled: true
+
+objects:
+  track:
+    - person
+    - cat
+    - dog
+    - knife
+    - bottle
+version: 0.14

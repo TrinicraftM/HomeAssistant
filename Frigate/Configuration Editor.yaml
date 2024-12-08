@@ -1,8 +1,8 @@
 mqtt:
   enabled: true
-  host: 192.168.1.42
-  user: root
-  password: trinidad
+  host: 192.168.x.xxx
+  user: xxxxxxxx
+  password: xxxxxxxx
   port: 1883
 
 cameras:
